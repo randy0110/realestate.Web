@@ -15,6 +15,10 @@ Crea un archivo `.env` en la raíz:
 ```env
 VITE_API_BASE_URL=http://localhost:5000/api
 
+```
+
+## 🛠️ Instalación y ejecución
+
 # Instalar dependencias
 npm install
 
@@ -26,3 +30,5 @@ npm run build
 
 # Ejecutar pruebas unitarias
 npm run test
+
+
