@@ -22,7 +22,7 @@ describe("Filters component", () => {
     });
 
     // Enviar formulario
-    fireEvent.click(screen.getByText("buscar"));
+    fireEvent.click(screen.getByText("Buscar"));
 
     expect(handleChange).toHaveBeenCalledWith({
       name: "Casa Bonita",
@@ -37,7 +37,7 @@ describe("Filters component", () => {
 
     render(<Filters onChange={handleChange} />);
 
-    fireEvent.click(screen.getByText("buscar"));
+    fireEvent.click(screen.getByText("Buscar"));
 
     expect(handleChange).toHaveBeenCalledWith({
       name: undefined,

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { ArrowLeft, ArrowRight  } from 'lucide-react';
 interface Props {
   currentPage: number;
   totalPages: number;
@@ -22,16 +22,17 @@ const Pagination: React.FC<Props> = ({ currentPage, totalPages, onPageChange }) 
       <button
         onClick={() => goToPage(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50 flex items-center gap-4"
       >
-        ⬅ Prev
+      <ArrowLeft />
+      Prev
       </button>
 
       {Array.from({ length: totalPages > 5 ? 5 : totalPages }, (_, i) => (
         <button
           key={i + inc}
           onClick={() => goToPage(i + inc)}
-          className={`px-3 py-1 rounded ${
+          className={`px-3 py-1 rounded  ${
             currentPage === i + inc ? "bg-blue-500 text-white" : "bg-gray-200"
           }`}
         >
@@ -42,9 +43,9 @@ const Pagination: React.FC<Props> = ({ currentPage, totalPages, onPageChange }) 
       <button
         onClick={() => goToPage(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50 flex items-center gap-4"
       >
-        Next ➡
+        Next <ArrowRight />
       </button>
     </div>
   );

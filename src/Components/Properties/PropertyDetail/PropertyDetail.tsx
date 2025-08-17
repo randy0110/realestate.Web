@@ -3,6 +3,7 @@ import { GetByIdPropertiesDto } from "../../../utils/interface";
 import { useLoading } from "../../../Context/LoadingContext/LoadingContext";
 import { useParams } from "react-router-dom";
 import { getById } from "../../../Controllers/Properties";
+import { X } from 'lucide-react';
 
 const PropertyDetail: React.FC = () => {
   const [data, setData] = useState<GetByIdPropertiesDto | undefined>(undefined);
@@ -36,7 +37,7 @@ const PropertyDetail: React.FC = () => {
       <div>
         <h1 className="text-3xl font-bold">{data.name}</h1>
         <p className="text-gray-600">{data.address}</p>
-        <a href={`/`} className="text-blue-600 text-3xl font-bold mt-2 inline-block absolute right-8 top-2 ">x</a>
+        <a href={`/`} className="text-blue-600 text-3xl font-bold mt-2 inline-block absolute right-8 top-2 "><X size={25}/></a>
       </div>
 
       {/* Imagen principal */}

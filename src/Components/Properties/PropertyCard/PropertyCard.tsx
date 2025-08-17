@@ -1,4 +1,5 @@
 import { PropertyListDto } from "../../../utils/interface";
+import { ReceiptText } from 'lucide-react';
 
 interface Props { 
    p: PropertyListDto;
@@ -17,7 +18,13 @@ const PropertyCard: React.FC<Props> = ({ p }) => {
         <h3 className="text-lg font-semibold">{p.name}</h3>
         <p className="text-sm text-gray-600">{p.address}</p>
         <p className="mt-2 font-medium">${p.price.toLocaleString()}</p>
-        <a href={`/properties/${p.id}`} className="text-blue-600 text-sm mt-2 inline-block">Ver detalles</a>
+        <a
+          href={`/properties/${p.id}`}
+          className="inline-flex items-center gap-2 mt-2 text-blue-600 text-sm bg-blue-100 rounded p-1 hover:bg-blue-200 transition"
+        >
+        <ReceiptText size={16} />
+        Ver detalles
+      </a>
       </div>
     </div>
   );
