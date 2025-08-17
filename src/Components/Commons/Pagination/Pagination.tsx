@@ -20,12 +20,12 @@ const Pagination: React.FC<Props> = ({ currentPage, totalPages, onPageChange }) 
   return (
     <div className="flex items-center justify-center gap-2 mt-4">
       <button
+        data-testid="prev-button"
         onClick={() => goToPage(currentPage - 1)}
         disabled={currentPage === 1}
         className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50 flex items-center gap-4"
       >
-      <ArrowLeft />
-      Prev
+      <ArrowLeft size={24} />
       </button>
 
       {Array.from({ length: totalPages > 5 ? 5 : totalPages }, (_, i) => (
@@ -41,11 +41,12 @@ const Pagination: React.FC<Props> = ({ currentPage, totalPages, onPageChange }) 
       ))}
 
       <button
+        data-testid="next-button"
         onClick={() => goToPage(currentPage + 1)}
         disabled={currentPage === totalPages}
         className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50 flex items-center gap-4"
       >
-        Next <ArrowRight />
+      <ArrowRight size={24} />
       </button>
     </div>
   );
